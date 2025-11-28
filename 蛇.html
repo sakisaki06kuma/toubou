@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蛇</title>
+    <link rel="stylesheet" href="./2style.css">
+</head>
+<body>
+  <style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+  
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+
+<div class="page-title-wrapper">
+  <div class="page-title">逃亡</div>
+  <div class="page-subtitle">作品ペ-ジ</div>
+  </div>
+
+    <div class="work-container">
+        <div class="work-image">
+          <img src="./image/蛇.png">
+        </div>
+
+        <!-- ▼ 相対位置にして、右側の画像と解説を重ねる ▼ -->
+        <div class="work-description"> <!-- ← ここに side-wrapper を入れる -->
+        <div class="side-wrapper">
+          <img src="./image/解説.PNG"
+               id="sideImage"
+               class="side-image show"
+               onclick="toggleDesc()">
+               <div id="touchText" class="touch-text">⇧タッチで解説</div>
+          <div id="sideText" class="side-text hidden" onclick="toggleDesc()">
+
+          <h2>蛇</h2>
+          <p>
+            テーマパークでよく動物の耳のカチューシャなどを<br>
+            付けるかと思いますが、本物の動物を乗せたら<br>
+            面白そうだと思い制作しました。
+          </p>
+          </div>
+       
+   
+          
+          </div>
+          </div>
+
+    
+
+          <div class="nav-buttons">
+            <a href="流石に暑い.html" class="nav prev">＜</a>
+            <a href="top.html" class="nav top">ギャラリー</a>
+            <a href="ウール100.html" class="nav next">＞</a>
+          </div>
+          </div>
+
+          </div>
+           <!-- ▼ 画像 ↔ 解説の切り替えスクリプト ▼ -->
+           <script>
+            function toggleDesc() {
+                const img = document.getElementById("sideImage");
+                const txt = document.getElementById("sideText");
+                const touch = document.getElementById("touchText");
+            
+                if (img.classList.contains("show")) {
+                    // 画像 → 解説
+                    img.classList.remove("show");
+                    img.classList.add("hidden");
+            
+                    txt.classList.remove("hidden");
+                    txt.classList.add("show");
+            
+                    // 文字をフェードアウト
+                    touch.style.opacity = 0;
+                } else {
+                    // 解説 → 画像
+                    txt.classList.remove("show");
+                    txt.classList.add("hidden");
+            
+                    img.classList.remove("hidden");
+                    img.classList.add("show");
+            
+                    // 文字をフェードイン
+                    touch.style.opacity = 1;
+                }
+            }
+
+
+            
+            </script>
+            
+            
+            
+</body>
+</html>

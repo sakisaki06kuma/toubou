@@ -1,0 +1,190 @@
+@font-face {
+  font-family: "MyFont";             /* 好きな名前でOK */
+  src: url("./エビハラのくせ字/EbiharaNoKuseji.ttf") format("truetype");
+}
+
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;    /* 上の余白！！！ */
+  margin-bottom: 40px; /* 下の余白 */
+}
+
+h4 {
+  text-align: center;
+  line-height: 2;
+  margin-top: 0;       /* h1との間の余白を調整 */
+  margin-bottom:  1000px; /* の余白 */
+}
+
+
+.door-image {
+  display: block;
+  margin: 40px auto;
+  max-width: 600px; /* 固定幅にしたい場合 */
+  width: 10%;       /* 画面サイズに応じて縮小もOK */
+  height: auto;
+  margin-top: 100px;
+}
+
+
+.nav-buttons {   /* 常に画面上に固定 */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;           /* ボタン同士のすき間 */
+  z-index: 1000;       /* 動画などより前に表示 */
+}
+
+.nav-btn {
+  text-decoration: none;
+  padding:0% 20px;
+  background: rgba(255, 255, 255, 0.2); /* 透け感のある白 */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(4px); /* ふわっとガラス風 */
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+
+
+
+
+body {
+  font-family: "MyFont", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("./image/背景.png"); /* 背景画像を指定 */
+  background-repeat: repeat; /* 繰り返して貼る（布っぽく） */
+  background-size: auto;     /* 画像の元サイズで繰り返す */
+  background-position: top left; /* 貼り始めの位置 */
+  background-color: #f8f8f0;  /* 背景色（画像が読み込まれない時の補色） */
+color: white; /* 文字色が黒だと見えないので白にしておく */
+}
+
+header {
+  text-align: center;
+  background-color: rgb(0,0,0,0.3);
+  color: white;
+  padding: 10px;
+  position: relative;
+}
+
+h4 {
+  text-align: center;
+  line-height: 2;
+  margin-top: 100px;   /* 上の余白 */
+  margin-bottom: 50px; /* 下の余白（ナビボタンとの距離） */
+}
+
+
+
+
+
+
+  @media screen and (max-width: 768px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: #333;
+    }
+  
+    .menu.show {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .image-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 90px;
+    }
+  
+    .image-container .menu-icon {
+      width: 90%;
+      text-align:center;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 100px;
+      }
+  }
+
+  p {
+    text-align: center;
+    line-height: 1.8; /* 行間を1.8倍に設定 */
+  }
+  
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 60px;  /* ナビボタンとの間隔 */
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  @media screen and (max-width: 1000px) {
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 30px; 
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* 1列 → 2列に変更 */
+        padding: 0 30px; 
+        gap: 20px; /* 列間・行間のスペース */
+    }
+
+    .door-image {
+      width: 30%;      /* スマホでは画面に合わせて縮む */
+      max-width: 400px; /* でも大きくなりすぎない */
+    }
+}
+
+
+  #back-to-top {
+    position: fixed;      /* 画面に固定 */
+    bottom: 30px;         /* 下からの距離 */
+    right: 30px;          /* 右からの距離 */
+    padding: 10px 15px;   /* ボタンサイズ */
+    background-color: rgba(255,255,255,0.3); /* 半透明 */
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;        /* 他の要素より前に表示 */
+    transition: 0.3s;
+  }
+  
+  #back-to-top:hover {
+    background-color: rgba(255,255,255,0.5);
+  }
+  

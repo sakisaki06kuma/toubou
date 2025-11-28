@@ -1,0 +1,255 @@
+@font-face {
+  font-family: "MyFont";             /* 好きな名前でOK */
+  src: url("./エビハラのくせ字/EbiharaNoKuseji.ttf") format("truetype");
+}
+
+
+
+
+
+body {
+    background-image: url("./image/背景.png"); /* 背景画像を指定 */
+    background-repeat: repeat; /* 繰り返して貼る（布っぽく） */
+    background-size: auto;     /* 画像の元サイズで繰り返す */
+    background-position: top left; /* 貼り始めの位置 */
+    background-color: #f8f8f0;  /* 背景色（画像が読み込まれない時の補色） */
+    font-family: "MyFont", sans-serif;
+    color:white;
+    margin: 0;
+    padding: 50px;
+  }
+  
+  .work-container {
+    display: flex;         
+    flex-direction: column; /* ← 横並び → 縦並びに変更 */
+    align-items: center;    /* 横方向中央寄せ */
+    gap: 20px;              /* 作品画像と下の説明の間の余白 */
+}
+  
+  .work-image img {
+    width: 400px;              /* 画像サイズ */
+    border-radius: 10px;       /* 少し角丸 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .work-description {
+    width: 400px;
+    /* height: 250px; ← これ削除！ */
+}
+
+
+  
+  
+  .work-description h2 {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+  }
+  
+  .work-description p {
+    line-height: 1.8;
+  }
+  
+  /* 既存のCSSの下に追加してOK */
+
+  .nav-buttons {
+    position: relative; /* 固定はやめる */
+    margin-top: 20px;   /* 作品画像下のスペース */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    z-index: 1; /* touch-text より下 */
+  }
+  
+  .nav {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #555;
+    transition: 0.3s;
+  }
+  
+  .nav:hover {
+    color: #000;           /* ホバーで少し濃く */
+    transform: scale(1.2); /* ホバーで少し大きく */
+  }
+  
+  .side-wrapper {
+    position: relative; /* 重ねるため */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+
+
+  .side-image, .side-text {
+    position: static;
+    margin-bottom: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+
+  
+
+
+/* 小さい画像 */
+.side-image {
+  width: 50%;
+  border-radius: 10px;
+  cursor: pointer;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+
+/* 解説文 */
+.side-text {
+  position: absolute;
+  top: 0;
+  width: 110%; /* ← 50%から広げて横長に */
+  max-width: 600px; /* ← これ以上は広がらないように調整 */
+  text-align: center;
+  background-color: rgba(26,26,26,0.7);
+  padding: 15px;      /* 少し余白を広げる */
+  box-sizing: border-box;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  white-space: normal; /* ← デフォルトの折返し */
+  line-height: 1.5;   /* 行間を少し詰めると横長感UP */
+}
+
+
+/* 表示中 */
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.touch-text {
+  margin-top: -5px; /* 数値を調整すると画像に近づく */
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  transition: opacity 0.5s;
+  z-index: 2;
+}
+
+.page-title-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: flex-start; /* 上揃え */
+  gap: 10px; /* 2つの縦書きの間隔 */
+  z-index: 10;
+}
+
+.page-title, .page-subtitle {
+  writing-mode: vertical-rl; /* 縦書き */
+  font-family: "MyFont", sans-serif;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.page-subtitle {
+  writing-mode: vertical-rl; /* 縦書き */
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: "MyFont", sans-serif;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  
+  /* 下げるための調整 */
+  margin-top: 20px; /* 数値を調整して好みの位置に */
+}
+
+/* ギャラリーボタン用 */
+/* ギャラリーボタン用 */
+.nav.top {
+  display: inline-block;
+  padding: 10px 20px;       /* 縦横サイズ */
+  border: 2px solid #555;   /* 他ボタンと同じ枠色 */
+  border-radius: 50px;      /* 丸くする */
+  text-decoration: none;
+  color: #555;              /* 他ボタンと同じ文字色 */
+  transition: 0.3s;
+}
+
+/* ホバー時 */
+.nav.top:hover {
+  color: #000;              /* 他ボタンと同じホバー色 */
+  transform: scale(1.2);    /* 他ボタンと同じ拡大 */
+  background-color: transparent; /* 背景は透明に統一 */
+}
+
+/* ナビ全体を少し小さく */
+.nav-buttons .nav {
+  font-size: 1.5rem;     /* 今は2rem → 1.5remに */
+  padding: 6px 12px;     /* 今は10px 20px → 小さく */
+  border-width: 1.5px;   /* 枠の太さも少し細く */
+}
+
+.work-container video {
+  width: 100%;        /* 親コンテナに合わせる */
+  max-width: 600px;   /* 動画の最大サイズ */
+  border-radius: 10px; /* 角丸 */
+}
+
+/* 画面幅が600px以下になったらレイアウトを変更 */
+@media screen and (max-width: 768px) {
+  .page-title-wrapper {
+    flex-direction: column;        /* 横並び → 縦並び */
+    align-items: center;           /* 中央揃え */
+    gap: 5px;                      /* 上下の間隔 */
+  }
+
+  .page-subtitle {
+    margin-top: 0;                 /* 上下マージンリセット */
+    text-align: center;            /* 文字列も中央寄せ */
+  }
+
+  .work-image video,
+  .work-image img {
+    width: 100%;       /* 親の幅に合わせる */
+    max-width: 100%;   /* 画面いっぱいになりすぎない */
+    box-sizing: border-box; /* パディングを含めてサイズ調整 */
+  }
+
+.touch-text {
+  font-size: 12px;
+}
+
+.work-container {
+  padding: 0 20px; /* 左右に20pxの余白 */
+}
+
+.work-description {
+  width: 100%;
+  padding: 0 10px;  /* 説明文の左右余白 */
+  box-sizing: border-box;
+}
+
+.work-container video {
+  max-width: 100%; /* 親のパディングに合わせて縮小 */
+}
+}
+
+
+

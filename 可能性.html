@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人間の可能性</title>
+    <link rel="stylesheet" href="./2style.css">
+</head>
+<body>
+  <style>
+    body {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+  
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+
+<div class="page-title-wrapper">
+  <div class="page-title">逃亡</div>
+  <div class="page-subtitle">作品ペ-ジ</div>
+  </div>
+
+    <div class="work-container">
+<!-- width 属性を削除 -->
+<video src="./image/可能性.MP4" autoplay loop muted playsinline></video>
+
+
+
+        <!-- ▼ 相対位置にして、右側の画像と解説を重ねる ▼ -->
+        <div class="work-description"> <!-- ← ここに side-wrapper を入れる -->
+        <div class="side-wrapper">
+          <img src="./image/解説.PNG"
+               id="sideImage"
+               class="side-image show"
+               onclick="toggleDesc()">
+               <div id="touchText" class="touch-text">⇧タッチで解説</div>
+          <div id="sideText" class="side-text hidden" onclick="toggleDesc()">
+
+          <h2>人間の可能性</h2>
+          <p>
+            人間が 人間→肉→骨→オパール と<br>
+            姿を変えていくアニメーションです。<br>
+            
+          </p>
+          </div>
+       
+   
+          
+          </div>
+          </div>
+
+    
+
+          <div class="nav-buttons">
+            <a href="遠い.html" class="nav prev">＜</a>
+            <a href="top.html" class="nav top">ギャラリー</a>
+            <a href="次の作品.html" class="nav next"></a>
+          </div>
+          </div>
+
+          </div>
+           <!-- ▼ 画像 ↔ 解説の切り替えスクリプト ▼ -->
+           <script>
+            function toggleDesc() {
+                const img = document.getElementById("sideImage");
+                const txt = document.getElementById("sideText");
+                const touch = document.getElementById("touchText");
+            
+                if (img.classList.contains("show")) {
+                    // 画像 → 解説
+                    img.classList.remove("show");
+                    img.classList.add("hidden");
+            
+                    txt.classList.remove("hidden");
+                    txt.classList.add("show");
+            
+                    // 文字をフェードアウト
+                    touch.style.opacity = 0;
+                } else {
+                    // 解説 → 画像
+                    txt.classList.remove("show");
+                    txt.classList.add("hidden");
+            
+                    img.classList.remove("hidden");
+                    img.classList.add("show");
+            
+                    // 文字をフェードイン
+                    touch.style.opacity = 1;
+                }
+            }
+
+
+            
+            </script>
+            
+            
+            
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opening</title>
+  <link rel="stylesheet" href="./OPstyle.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+    }
+
+    #openingVideo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer; /* クリックできる感じに */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 開始時は停止状態の動画 -->
+  <video id="opening" src="./image/OP完成.mp4" preload="auto" playsinline 
+  class="fullscreen-video">
+  </video>
+
+  <script>
+    const video = document.getElementById("opening");
+
+    // クリックされたら再生
+    video.addEventListener("click", () => {
+      video.play();
+    });
+
+    // 動画終了後にトップページへ
+    video.addEventListener("ended", () => {
+      window.location.href = "top.html";
+    });
+  </script>
+
+<script src="./Top.js"></script>
+
+</body>
+</html>
