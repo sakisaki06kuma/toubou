@@ -61,7 +61,7 @@ body {
   font-family: "MyFont", sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("./image/背景.png"); /* 背景画像を指定 */
+  background-image: url("./image/背景.jpg"); /* 背景画像を指定 */
   background-repeat: repeat; /* 繰り返して貼る（布っぽく） */
   background-size: auto;     /* 画像の元サイズで繰り返す */
   background-position: top left; /* 貼り始めの位置 */
