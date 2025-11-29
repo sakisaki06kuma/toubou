@@ -21,21 +21,34 @@
       object-fit: cover;
       cursor: pointer; /* クリックできる感じに */
     }
+
+    #touchText {
+    position: absolute;
+    top: 65%;          /* poster画像の下くらい */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2em;
+    text-shadow: 0 0 5px black;
+    pointer-events: none; /* 文字部分はクリックを通す */
+    }
+
   </style>
 </head>
 <body>
 
   <!-- 開始時は停止状態の動画 -->
-  <video id="opening" src="./image/OP完成.mp4" preload="auto" playsinline 
-  class="fullscreen-video">
-  </video>
+   
+  <video id="opening" src="./image/OP完成.mp4" preload="auto" playsinline class="fullscreen-video" poster="./image/title.jpg"> </video>
 
+  <div id="touchText">touch screen</div>
   <script>
     const video = document.getElementById("opening");
 
     // クリックされたら再生
     video.addEventListener("click", () => {
       video.play();
+      touchText.style.display = "none";  // 文字を非表示に
     });
 
     // 動画終了後にトップページへ
