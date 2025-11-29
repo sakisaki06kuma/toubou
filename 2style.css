@@ -259,8 +259,8 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);  /* 横中央に配置 */
-  width: 98%;               /* 画面幅に合わせる */
-  max-width: 480px;         /* 最大幅を制限 */
+  width: 110%;               /* 画面幅に合わせる */
+  max-width: 500px;         /* 最大幅を制限 */
   padding: 10px 15px;       /* 左右余白 */
   box-sizing: border-box;
   text-align: center;
@@ -283,8 +283,8 @@ body {
 }
 
 .side-image {
-  width: 55%;               /* 画像をスマホ画面に合わせる */
-  max-width: 160px;
+  width: 70%;               /* 画像をスマホ画面に合わせる */
+  max-width: 200px;
   border-radius: 10px;
   margin: 0 auto 10px auto;
   cursor: pointer;
