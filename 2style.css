@@ -55,6 +55,7 @@ body {
 
   .nav-buttons {
     position: relative; /* 固定はやめる */
+    width: 300px;
     margin-top: 20px;   /* 作品画像下のスペース */
     display: flex;
     justify-content: center;
@@ -110,8 +111,8 @@ body {
 .side-text {
   position: absolute;
   top: 0;
-  width: 110%; /* ← 50%から広げて横長に */
-  max-width: 600px; /* ← これ以上は広がらないように調整 */
+  width: 130%; /* ← 50%から広げて横長に */
+  max-width: 700px; /* ← これ以上は広がらないように調整 */
   text-align: center;
   background-color: rgba(26,26,26,0.7);
   padding: 15px;      /* 少し余白を広げる */
@@ -122,6 +123,8 @@ body {
   transition: opacity 0.5s ease;
   white-space: normal; /* ← デフォルトの折返し */
   line-height: 1.5;   /* 行間を少し詰めると横長感UP */
+  line-break: strict;
+  word-break: keep-all;
 }
 
 
