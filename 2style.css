@@ -235,9 +235,10 @@ body {
     box-sizing: border-box; /* パディングを含めてサイズ調整 */
   }
 
-.touch-text {
-  font-size: 12px;
-}
+  .touch-text {
+    font-size: 12px;
+    margin-top: 5px;
+  }
 
 .work-container {
   padding: 0 20px; /* 左右に20pxの余白 */
@@ -251,6 +252,54 @@ body {
 
 .work-container video {
   max-width: 100%; /* 親のパディングに合わせて縮小 */
+}
+
+.side-text {
+  position: absolute;       /* 画像の上に重ねる */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);  /* 横中央に配置 */
+  width: 110%;               /* 画面幅に合わせる */
+  max-width: 600px;         /* 最大幅を制限 */
+  padding: 10px 15px;       /* 左右余白 */
+  box-sizing: border-box;
+  text-align: center;
+  background-color: rgba(26,26,26,0.7);
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  line-height: 1.7;
+  word-break: normal;
+  line-break: auto;
+}
+
+.side-wrapper {
+  position: relative;       /* 重ねるために必須 */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-image {
+  width: 70%;               /* 画像をスマホ画面に合わせる */
+  max-width: 200px;
+  border-radius: 10px;
+  margin: 0 auto 10px auto;
+  cursor: pointer;
+  object-fit: cover;
+  display: block;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 }
 
