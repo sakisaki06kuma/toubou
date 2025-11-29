@@ -260,7 +260,7 @@ body {
   left: 50%;
   transform: translateX(-50%);  /* 横中央に配置 */
   width: 120%;               /* 画面幅に合わせる */
-  max-width: 500px;         /* 最大幅を制限 */
+  max-width: 300px;         /* 最大幅を制限 */
   padding: 10px 15px;       /* 左右余白 */
   box-sizing: border-box;
   text-align: center;
