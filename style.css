@@ -125,6 +125,8 @@ h4 {
   p {
     text-align: center;
     line-height: 1.8; /* 行間を1.8倍に設定 */
+    line-break: strict;  /* 日本語に最適化された改行ルール */
+  word-break: keep-all; /* 英単語が無理に割れない */
   }
   
 
@@ -166,6 +168,11 @@ h4 {
     .door-image {
       width: 30%;      /* スマホでは画面に合わせて縮む */
       max-width: 400px; /* でも大きくなりすぎない */
+    }
+
+    p {
+      padding: 0 20px;   /* スマホでは左右に余白 */
+      line-height: 1.9;  /* 行間も少し広げると自然 */
     }
 }
 
